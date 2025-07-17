@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class FaceBook {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -19,22 +19,22 @@ public class FaceBook {
 
 		WebElement dayDD = driver.findElement(By.id("day"));
 		Select selDay = new Select(dayDD);
-		selDay.selectByIndex(10);
+		selDay.selectByIndex(20);
 
 		WebElement monthDD = driver.findElement(By.id("month"));
-		Select selMonth = new Select(monthDD);
-//		selMonth.selectByIndex(10);
-		selMonth.selectByValue("7");
+		Select selMon = new Select(monthDD);
+		selMon.selectByValue("6");
 
 		WebElement yearDD = driver.findElement(By.id("year"));
 		Select selYear = new Select(yearDD);
-//		selYear.selectByIndex(14);
-		selYear.selectByVisibleText("2009");
+		List<WebElement> years = selYear.getOptions();
 
-		List<WebElement> year = selYear.getOptions();
-		for (WebElement i : year) {
-			System.out.println(i.getText());
+		for (WebElement i : years) {
+			String text = i.getText();
+			System.out.println(text);
 		}
 
+		Thread.sleep(3000);
+		driver.quit();
 	}
 }

@@ -42,6 +42,18 @@ public class Zomato {
 //		jse.executeScript("window.scrollTo(0,500)");
 //		Thread.sleep(500);
 //		jse.executeScript("window.scrollTo(0,500)");
+		
+		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(500);
+		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(500);
+		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(500);
+		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(500);
+		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(500);
+		
 		Thread.sleep(500);
 		driver.quit();
 	}
